@@ -12,7 +12,7 @@ def main():
         code=f.read()                                                             # Read file
     
     pattern=r"\(\"((?:\{\d+\})+)\"\s*-[fF]\s*((?:\'[^']+\'\,?)+)\)"               #Regex Pattern
-    de_obsfucated=re.sub(pattern,fun_deobfucation,code.replace("`",""))           # Calling deosfucated function and repalced the ` with null in the code which is an Escape char in ps
+    de_obsfucated=re.sub(pattern,fun_deobfucation,code.replace("`",""))           # Calling deosfucated function and repalced the Grave Char(`) with null in the code which is an Escape char in ps
 
     with open(sys.argv[1]+".bin", "wt") as f:
         f.write(de_obsfucated)                                                    # Write to file with an extension ".bin"
